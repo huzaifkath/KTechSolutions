@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Services Website</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    :root {
+        --bg: black;
+        --accent: purple;
+        --accent2: skyblue;
+        --muted: white;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background: var(--bg);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+    }
+
+   .nav {
+    display: flex;
+    justify-content: space-between; /* Brand left, links right */
+    align-items: center;
+    padding: 12px 30px;
+    width: 100%;
+    background: #0d1628;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* logo aur text ke beech gap */
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.brand .logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: #041021;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand .brand-text {
+    font-size: 18px;
+}
+
+
+    .links {
+        display: flex;
+        gap: 22px;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 600;
+        position: relative;
+        padding: 6px 4px;
+        transition: color 0.25s;
+    }
+
+    .links a:hover { color: #fff; }
+
+    .links a::after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0;
+        bottom: -6px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.28s;
+        border-radius: 3px;
+    }
+
+    .links a:hover::after { transform: scaleX(1); }
+
+    /* SECTIONS */
+    section {
+        padding: 60px 20px;
+    }
+
+    /* HERO */
+    .hero {
+        text-align: center;
+        background: linear-gradient(150deg, #0D1B2A, #007BFF);
+        color: #fff;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 25px; }
+    .hero .btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+        background: #FF7F50;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .hero .btn:hover {
+        background: #FF4500;
+        transform: scale(1.05);
+    }
+
+    /* OFFERS & SERVICES */
+    .offers, .services {
+        background: #f4f4f4;
+        border-radius: 5px;
+        padding: 40px 20px;
+    }
+
+    .offers h2, .services h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #111;
+    }
+
+    .offer-cards, .service-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .offer-card, .service-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .offer-card:hover, .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* CTA */
+    .cta-offer {
+        text-align: center;
+        background: linear-gradient(135deg, #FF7F50, #FF4500);
+        color: #fff;
+        padding: 50px 20px;
+        border-radius: 12px;
+        margin: 50px 0;
+    }
+
+    .cta-offer .btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+        background: #007BFF;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+    }
+
+    .cta-offer .btn:hover { background: #0056b3; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 1rem; }
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <div class="brand">
+        <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUVbCqjT6SzKK7xDeuWjl1KGzjt67HYUJvA&s" width="100%"></div>
+        <span class="brand-text">K Tech Solutions</span>
+    </div>
+    <div class="links">
+        <a href="home.html">Home</a>
+        <a href="services1.html">Services</a>
+        <a href="#offers">Offers</a>
+        <a href="#cta">Get Started</a>
+    </div>
+</div>
+
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h1>Welcome to Your Tech Solutions!</h1>
+    <p>Empowering your business with cutting-edge digital services.</p>
+    <a href="services.html" class="btn">Explore Services</a>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="offers">
+    <h2>Special Offers</h2>
+    <div class="offer-cards">
+        <div class="offer-card">
+            <h3>50% Off Web Development</h3>
+            <p>Get a fully responsive website at half price!</p>
+        </div>
+        <div class="offer-card">
+            <h3>Free SEO Audit</h3>
+            <p>Boost your website's visibility with a free SEO audit.</p>
+        </div>
+        <div class="offer-card">
+            <h3>Social Media Branding</h3>
+            <p>Professional setup for Instagram, Facebook, LinkedIn, and Twitter.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+        <div class="service-card">
+            <h3>Web Development</h3>
+            <p>Custom responsive websites, CMS, full-stack solutions, and maintenance.</p>
+        </div>
+        <div class="service-card">
+            <h3>Graphic Design</h3>
+            <p>Creative logos, banners, social media graphics, and UI/UX design.</p>
+        </div>
+        <div class="service-card">
+            <h3>Digital Marketing</h3>
+            <p>SEO, social media marketing, PPC campaigns, and content marketing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="cta-offer">
+    <h2>Start Your Digital Journey Today!</h2>
+    <p>Take advantage of our special offers and expert services.</p>
+        
+
+</section>
+
+</body>
+</html>

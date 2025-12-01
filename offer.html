@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Company Offers | Huzaifa Kath Tech</title>
+  <meta name="description" content="Discounted packages, bundle deals, easy payments, loyalty rewards, referral benefits, and 24/7 support." />
+  <style>
+    :root{
+      --bg:#0f1221;
+      --bg-soft:#151939;
+      --bg-accent:#121633;
+      --text:#e8eaf6;
+      --muted:#b7bfd6;
+      --primary:#7c9cff;
+      --primary-600:#5f7df2;
+      --secondary:#ff8a5b;
+      --secondary-600:#f0713e;
+      --card:#1a1f3f;
+      --border:#2a305a;
+      --success:#53d18d;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--primary);text-decoration:none}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+    .topbar{border-bottom:1px solid var(--border);background:var(--bg-soft)}
+    .topbar__wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__logo{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#0b0e1b;font-weight:700}
+    .brand__text small{display:block;color:var(--muted)}
+    .nav{display:flex;gap:18px}
+    .nav a{padding:8px 10px;border-radius:6px}
+    .nav a:hover{background:var(--bg-accent)}
+    .hero{background:linear-gradient(180deg,var(--bg-soft),var(--bg));padding:48px 0}
+    .hero__wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:28px;align-items:start}
+    .hero__actions{display:flex;gap:12px;margin:16px 0 10px}
+    .hero__points{margin:18px 0 0;padding:0 0 0 18px;color:var(--muted)}
+    .hero__card{background:var(--card);border:1px solid var(--border);padding:20px;border-radius:14px;position:relative}
+    .hero__card .stamp{position:absolute;top:-12px;right:14px;background:var(--success);color:#062015;padding:6px 10px;border-radius:6px;font-weight:700;font-size:12px}
+    .hero h1{margin:0 0 10px;font-size:28px}
+    .section{padding:44px 0;border-top:1px solid var(--border)}
+    .section--accent{background:var(--bg-soft)}
+    .section--dark{background:var(--bg-accent)}
+    .section__lead{color:var(--muted);max-width:720px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+    .card{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:14px;display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:0}
+    .card p{margin:0;color:var(--muted)}
+    .list{margin:8px 0 0;padding-left:18px;color:var(--text)}
+    .list--inline{display:flex;gap:16px;list-style:none;padding:0;margin:10px 0 0}
+    .badge{display:inline-block;background:var(--secondary);color:#20110b;padding:6px 10px;border-radius:8px;font-weight:700;font-size:12px}
+    .price{margin-top:auto;font-weight:700;color:var(--primary)}
+    .trust__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .trust__item{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:12px}
+    .limited__wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .timer{display:inline-block;background:var(--primary);color:#0c132b;padding:6px 10px;border-radius:8px;font-weight:700}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+    .contact__form label{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    input,textarea{background:#0c1026;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px}
+    input::placeholder,textarea::placeholder{color:#7c86a8}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:all .2s ease;font-weight:600}
+    .btn--full{width:100%}
+    .btn--primary{background:var(--primary);color:#0b0e1b;border-color:var(--primary-600)}
+    .btn--primary:hover{background:var(--primary-600)}
+    .btn--secondary{background:var(--secondary);color:#20110b;border-color:var(--secondary-600)}
+    .btn--secondary:hover{background:var(--secondary-600)}
+    .btn--ghost{background:transparent;border-color:var(--border);color:var(--text)}
+    .btn--ghost:hover{background:var(--bg-accent)}
+    .footer{border-top:1px solid var(--border);padding:18px 0;background:var(--bg-soft);color:var(--muted)}
+    .footer__wrap{display:flex;align-items:center;justify-content:space-between}
+    .footer__links{display:flex;gap:14px}
+    .footer__links a{color:var(--muted)}
+    .footer__links a:hover{color:var(--text)}
+    @media (max-width: 980px){
+      .hero__wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .limited__wrap{flex-direction:column;align-items:flex-start}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width: 600px){
+      .grid{grid-template-columns:1fr}
+      .nav{display:none}
+      .brand__text small{max-width:200px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar__wrap">
+      <div class="brand">
+        <span class="brand__logo">HK</span>
+        <div class="brand__text">
+          <strong>Huzaifa Kath Tech</strong>
+          <small>Karachi, Sindh — Trusted Muslim-owned tech company</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#offers">Offers</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#payments">Payments</a>
+        <a href="#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__wrap">
+      <div class="hero__content">
+        <h1>Exclusive Offers That Put Buyers First</h1>
+        <p>Reliable platform, discounted rates, easy payments, and better solutions — all designed to help you save and scale.</p>
+        <div class="hero__actions">
+          <a href="#offers" class="btn btn--primary">View Offers</a>
+          <a href="#contact" class="btn btn--ghost">Contact Sales</a>
+        </div>
+        <ul class="hero__points">
+          <li><strong>Reliability:</strong> Verified services and transparent pricing</li>
+          <li><strong>Affordability:</strong> Seasonal discounts and bundle deals</li>
+          <li><strong>Convenience:</strong> Multiple payment gateways and installments</li>
+        </ul>
+      </div>
+      <div class="hero__card">
+        <div

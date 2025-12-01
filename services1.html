@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K Tech Solutions — About & Services</title>
+  <meta name="description" content="K Tech Solutions - Reliable, affordable, and professional tech services. Founded by Huzaifa Kath from Karachi, Sindh. 50+ services, 24x7 support."/>
+  <style>
+    /* ---------- Root & Variables ---------- */
+    :root{
+      --bg: #071827;
+      --surface: #0f1f2b;
+      --card: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      --muted: #9fb3c8;
+      --text: #eaf6ff;
+      --accent: #29d0ff;
+      --accent2:#5ee6b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 12px;
+      --maxw: 1150px;
+      --container-pad: 22px;
+      --shadow: 0 12px 30px rgba(3,10,18,0.6);
+      --accent-gradient: linear-gradient(90deg,var(--accent),var(--accent2));
+    }
+
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 500px at 10% 10%, rgba(11,37,53,0.6), transparent),
+                  radial-gradient(800px 300px at 90% 90%, rgba(29,60,80,0.6), transparent),
+                  var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      padding:var(--container-pad);
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    /* ---------- Header ---------- */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:62px; height:62px; border-radius:12px;
+      background:var(--accent-gradient);
+      display:grid; place-items:center; font-weight:800; color:#061824;
+      font-size:20px; box-shadow: 0 8px 24px rgba(46, 180, 255, 0.08), inset 0 -2px 6px rgba(0,0,0,0.08);
+    }
+    .brand h1{ margin:0; font-size:18px; letter-spacing:0.2px;}
+    .brand p{ margin:0; font-size:12px; color:var(--muted); margin-top:3px; }
+
+    nav{ display:flex; gap:8px; align-items:center;}
+    .nav-btn{ background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.03); padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600; }
+    .nav-btn:hover{ background:rgba(255,255,255,0.02); transform:translateY(-2px); transition:all .18s ease; }
+
+    /* ---------- Hero ---------- */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:20px;
+      align-items:stretch;
+    }
+    .hero-left{
+      background:var(--card);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.03);
+      overflow:hidden;
+    }
+    .kicker{ display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(46,180,255,0.08); color:var(--accent); font-weight:700; font-size:13px; margin-bottom:12px; }
+    .hero h2{ margin:6px 0 10px 0; font-size:28px; }
+    .hero p.lead{ margin:0 0 14px 0; color:var(--muted); font-size:15px; max-width:66ch; }
+    .features{ display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .feat{ background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); font-weight:600; color:var(--muted); }
+
+    /* owner card */
+    .owner{
+      margin-top:14px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(90deg, rgba(94,230,184,0.03), rgba(41,208,255,0.02));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .owner .avatar{ width:86px; height:86px; border-radius:10px; background:linear-gradient(90deg,#dffaff 0%, #c5fff0 40%); display:grid; place-items:center; color:#05202b; font-weight:800; font-size:22px;}
+    .owner .info h3{ margin:0; font-size:16px;}
+    .owner .info p{ margin:6px 0 0 0; color:var(--muted); font-size:13px; }
+
+    /* hero-right card */
+    .hero-right{
+      border-radius:var(--radius);
+      padding:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .cta-title{ font-weight:700; margin:0 0 8px 0; }
+    .cta p{ color:var(--muted); margin:0 0 12px 0; font-size:14px; }
+    .cta .big-btn{
+      display:inline-block; padding:12px 16px; border-radius:10px; background:var(--accent-gradient); color:#061824; font-weight:800; text-decoration:none; box-shadow: 0 10px 30px rgba(46,180,255,0.08);
+    }
+
+    /* ---------- Services Grid ---------- */
+    section.services{
+      display:grid;
+      gap:14px;
+    }
+    .services-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap:14px;
+    }
+    .service-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .22s ease, box-shadow .22s ease;
+      box-shadow: 0 8px 26px rgba(2,6,10,0.5);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:170px;
+    }
+    .service-card:hover{ transform:translateY(-8px); box-shadow: 0 18px 40px rgba(2,8,16,0.6); }
+    .service-top{ display:flex; align-items:center; gap:12px;}
+    .service-top .img{
+      width:64px; height:64px; border-radius:10px; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:grid; place-items:center; color:var(--muted); font-weight:700;
+      border:1px solid rgba(255,255,255,0.02);
+      overflow:hidden;
+    }
+    .service-top h4{ margin:0; font-size:15px; }
+    .service-desc{ color:var(--muted); font-size:13px; flex:1; }
+    .service-bottom{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .price{ color:var(--accent); font-weight:800; }
+    .order-btn{ padding:8px 12px; border-radius:10px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color:var(--text); text-decoration:none; font-weight:700; }
+    .order-btn:hover{ background:var(--accent-gradient); color:#041824; }
+
+    /* ---------- Support & Loyalty ---------- */
+    .support{
+      display:flex;
+      gap:14px;
+      align-items:stretch;
+      margin-top:6px;
+    }
+    .support .card{
+      flex:1;
+      padding:18px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .support h3{ margin:0 0 8px 0; }
+    .support p{ margin:0; color:var(--muted); }
+
+    /* ---------- Footer ---------- */
+    footer{
+      margin-top:18px; text-align:center; color:var(--muted); font-size:13px;
+    }
+
+    /* ---------- Animations ---------- */
+    .fade-up{ opacity:0; transform:translateY(8px); animation:fadeUp .7s forwards; }
+    .fade-up.delay-1{ animation-delay:.08s }
+    .fade-up.delay-2{ animation-delay:.14s }
+    .staggered > *{ opacity:0; transform:translateY(10px); animation:stagger .6s forwards; }
+    .staggered > *:nth-child(1){ animation-delay:.06s }
+    .staggered > *:nth-child(2){ animation-delay:.12s }
+    .staggered > *:nth-child(3){ animation-delay:.18s }
+    .staggered > *:nth-child(4){ animation-delay:.24s }
+    @keyframes fadeUp{ to{ opacity:1; transform:none } }
+    @keyframes stagger{ to{ opacity:1; transform:none } }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1000px){
+      .hero{ grid-template-columns: 1fr; }
+      .hero-right{ order:2; }
+    }
+    @media (max-width:560px){
+      header{ flex-direction:column; align-items:flex-start; gap:10px; }
+      nav{ width:100%; justify-content:space-between; }
+      .service-top .img{ width:56px; height:56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="fade-up">
+      <div class="brand">
+        <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUVbCqjT6SzKK7xDeuWjl1KGzjt67HYUJvA&s" width="100%"></div>
+        <div>
+          <h1>K Tech Solutions</h1>
+          <p>Reliable • Affordable • 24×7 Support</p>
+        </div>
+      </div>
+     
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left fade-up delay-1">
+        <span class="kicker">Welcome • Trusted by Buyers</span>
+        <h2>We make technology simple, reliable, and affordable for everyone.</h2>
+        <p class="lead">K Tech Solutions is a full-service technology platform built to deliver high-quality IT services and digital products. Our goal is to be the most trusted partner for businesses, startups, and individuals who want fast delivery, discounted rates, and trustworthy support.</p>
+
+        <div class="features">
+          <div class="feat">Trusted Sellers</div>
+          <div class="feat">Discounted Pricing</div>
+          <div class="feat">Easy Payments</div>
+          <div class="feat">24×7 Support</div>
+          <div class="feat">Future-proof Solutions</div>
+        </div>
+
+        <!-- Owner intro -->
+        <div class="owner fade-up delay-2" style="margin-top:18px;">
+          
+          <div class="info">
+            <h3>Founder — Huzaifa Kath</h3>
+            <p>Huzaifa Kath hails from <strong>Karachi, Sindh</strong>. A proud Muslim and a passionate technologist, he founded K Tech Solutions with a single aim: to create a reliable platform that serves buyers and small businesses with integrity, professional skills, and fairness.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:14px; color:var(--muted)"><strong>Platform Goals:</strong> Provide a trusted place for buyers, discounted rates, easy and secure payment options, dependable delivery, better technical solutions, and long-term support for digital transformations.</p>
+      </div>
+
+      <aside class="hero-right fade-up delay-1">
+        <div class="cta">
+          <div class="cta-title">Why Choose K Tech Solutions?</div>
+          <p>Our core principles are transparency, reliability, and client-first service. We combine modern tech, experienced engineers, and a proven delivery system to ensure every project succeeds.</p>
+          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+            <a class="big-btn" href="#services">Explore Services</a>
+            <a class="big-btn" href="#contact" style="background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text);">Contact Sales</a>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-direction:column;">
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="width:46px; height:46px; border-radius:10px; display:grid; place-items:center; background:rgba(46,180,255,0.06); color:var(--accent); font-weight:700;">⚡</div>
+            <div>
+              <div style="font-weight:800">Fast Delivery</div>
+              <div style="color:var(--muted); font-size:13px;">We deliver professional results on time.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="width:46px; height:46px; border-radius:10px; display:grid; place-items:center; background:rgba(94,230,184,0.04); color:var(--accent2); font-weight:700;">🔒</div>
+            <div>
+              <div style="font-weight:800">Secure Payments</div>
+              <div style="color:var(--muted); font-size:13px;">Multiple safe payment gateways supported.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="width:46px; height:46px; border-radius:10px; display:grid; place-items:center; background:rgba(255,255,255,0.02); color:var(--muted); font-weight:700;">📞</div>
+            <div>
+              <div style="font-weight:800">24×7 Support</div>
+              <div style="color:var(--muted); font-size:13px;">Live agents and fast ticket response any time.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2 style="margin:0;">Our Services — 50 Professional Tech & IT Solutions</h2>
+        <div style="color:var(--muted)">Browse & order — prices are estimations and may vary by scope.</div>
+      </div>
+
+      <div class="services-grid staggered" style="margin-top:12px;">
+        <!-- I'll include all 50 cards. Each card includes title, short description and a realistic price range. -->
+        <!-- 1 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Website Templates" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Website Templates (HTML/CSS)</h4>
+          </div>
+          <div class="service-desc">Beautiful, responsive, and SEO-friendly HTML/CSS templates for businesses and portfolios. Clean code and cross-browser support.</div>
+          <div class="service-bottom">
+            <div class="price">$25–$90</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQKTUAvB9M5jV2okh_-ieJAsHKPizCZAoTbg&s" alt="Mobile UI" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Mobile App UI Kits</h4>
+          </div>
+          <div class="service-desc">High-quality UI kits for Android & iOS. Includes Figma/Sketch files, icons, and component systems to speed development.</div>
+          <div class="service-bottom">
+            <div class="price">$45–$120</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwSCli3QI3e--UsCfZ66YF4Adty2TOa8GJhg&s" alt="Dashboard" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Dashboard UI Templates</h4>
+          </div>
+          <div class="service-desc">Custom admin dashboards and analytics panels with charts, components, and performance optimization for SaaS apps.</div>
+          <div class="service-bottom">
+            <div class="price">$50–$150</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Business Software" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Business Management Software</h4>
+          </div>
+          <div class="service-desc">Complete solutions for billing, HR, inventory, and reporting. Tailored to small and medium enterprises for better control.</div>
+          <div class="service-bottom">
+            <div class="price">$130–$350</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=60" alt="POS" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>POS Systems (Point of Sale)</h4>
+          </div>
+          <div class="service-desc">Reliable POS setup for retail, restaurants, and e-shops with reporting, inventory sync and secure payments.</div>
+          <div class="service-bottom">
+            <div class="price">$150–$450</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=300&q=60" alt="Antivirus" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Antivirus / Security Tools</h4>
+          </div>
+          <div class="service-desc">Malware detection, cleanup, and endpoint protection packages for small businesses and home PCs.</div>
+          <div class="service-bottom">
+            <div class="price">$35–$100</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgsFbEfKNmPPMVe0kUQSl1Gruh99vvByjSmg&s" alt="VPN" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>VPN Service</h4>
+          </div>
+          <div class="service-desc">Private VPN setup & configuration for secure browsing and remote-access for teams and individuals.</div>
+          <div class="service-bottom">
+            <div class="price">$20–$70</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Cloud Storage" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Cloud Storage Software</h4>
+          </div>
+          <div class="service-desc">Private cloud solutions, synchronization, and secure file sharing for teams with backup options.</div>
+          <div class="service-bottom">
+            <div class="price">$80–$250</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=300&q=60" alt="SaaS" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>SaaS Tools (Subscription Apps)</h4>
+          </div>
+          <div class="service-desc">Build and deploy subscription-based apps with billing, user management, and analytics integrations.</div>
+          <div class="service-bottom">
+            <div class="price">$250–$850</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.ctfassets.net/lzny33ho1g45/2Ezi9e9bv6McOMN4rdWDwO/de7278dc077b7f983df5c13d69663ec7/best-productivity-apps.jpg?fm=jpg&q=31&fit=thumb&w=1520&h=760" alt="Productivity" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Productivity Apps</h4>
+          </div>
+          <div class="service-desc">To-do apps, reminders, and productivity tools with cross-platform syncing and light UX.</div>
+          <div class="service-bottom">
+            <div class="price">$70–$230</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://wp.sfdcdigital.com/en-ap/wp-content/uploads/sites/14/2025/03/marquee-agentforce-ai-chatbot.png" alt="AI Chatbot" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>AI Chatbot Software</h4>
+          </div>
+          <div class="service-desc">Conversational bots for websites and customer support powered by modern NLP technologies.</div>
+          <div class="service-bottom">
+            <div class="price">$120–$550</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=60" alt="CRM" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>CRM Software</h4>
+          </div>
+          <div class="service-desc">Customer management, lead tracking, and automation to grow sales and retain customers.</div>
+          <div class="service-bottom">
+            <div class="price">$170–$500</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=300&q=60" alt="ERP" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>ERP Systems</h4>
+          </div>
+          <div class="service-desc">Enterprise-grade resource planning systems integrated for finance, inventory, and HR.</div>
+          <div class="service-bottom">
+            <div class="price">$500–$2500</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Graphic Templates" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Graphic Designing Templates</h4>
+          </div>
+          <div class="service-desc">Social media templates, banners, and marketing creatives tailored to brand guidelines.</div>
+          <div class="service-bottom">
+            <div class="price">$10–$80</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Tech eBooks" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Tech eBooks (Coding & AI)</h4>
+          </div>
+          <div class="service-desc">High-quality, exam-oriented and practical eBooks covering coding, AI basics, and cybersecurity.</div>
+          <div class="service-bottom">
+            <div class="price">$8–$40</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=300&q=60" alt="Online Courses" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Online Courses (Programming & AI)</h4>
+          </div>
+          <div class="service-desc">Structured video courses, assignments, and certification tailored for beginners to advanced learners.</div>
+          <div class="service-bottom">
+            <div class="price">$30–$300</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=300&q=60" alt="Code Snippets" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Code Snippets / Modules</h4>
+          </div>
+          <div class="service-desc">Reusable code components and modules for web and mobile to speed up development.</div>
+          <div class="service-bottom">
+            <div class="price">$5–$50</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://assets.hongkiat.com/uploads/top-wordpress-themes-designers-businesses/hero.jpg" alt="WordPress Themes" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>WordPress Themes</h4>
+          </div>
+          <div class="service-desc">Custom WordPress themes with Gutenberg support, performance optimizations, and SEO-ready structure.</div>
+          <div class="service-bottom">
+            <div class="price">$40–$200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=300&q=60" alt="WordPress Plugins" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>WordPress Plugins</h4>
+          </div>
+          <div class="service-desc">Feature plugins for bookings, forms, eCommerce integration, and customized functionality.</div>
+          <div class="service-bottom">
+            <div class="price">$30–$180</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgZgcQhBO8NnGm7Ogv-noeT4NL62WNlVuGNQ&s" alt="Shopify Themes" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Shopify Themes</h4>
+          </div>
+          <div class="service-desc">Optimized eCommerce themes with conversion-focused UI and mobile-first experience.</div>
+          <div class="service-bottom">
+            <div class="price">$60–$260</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=300&q=60" alt="Browser Extensions" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Browser Extensions</h4>
+          </div>
+          <div class="service-desc">Productivity and utility extensions for Chrome and Firefox with secure coding practices.</div>
+          <div class="service-bottom">
+            <div class="price">$80–$320</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=60" alt="Resume Builder" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Resume Builder Tools</h4>
+          </div>
+          <div class="service-desc">Custom resume builders and ATS-friendly templates for job applicants and professionals.</div>
+          <div class="service-bottom">
+            <div class="price">$15–$70</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=300&q=60" alt="Code Generators" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Code Generators / AI Tools</h4>
+          </div>
+          <div class="service-desc">AI-assisted code generators and developer tools to speed up prototyping and production code.</div>
+          <div class="service-bottom">
+            <div class="price">$40–$200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=300&q=60" alt="Cyber Toolkits" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Cybersecurity Toolkits</h4>
+          </div>
+          <div class="service-desc">Security toolkits with scanning, reporting, vulnerability checks, and remediation guidelines.</div>
+          <div class="service-bottom">
+            <div class="price">$90–$450</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 25 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=60" alt="Licenses" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Software License Keys</h4>
+          </div>
+          <div class="service-desc">Authorized license provisioning and activation for popular software and tools (enterprise & personal).</div>
+          <div class="service-bottom">
+            <div class="price">$5–$80</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 26 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXEEJqjOpu4wjnKTdfHbCHJnPLPWtwUJp9Cw&s" alt="Web Dev" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Website Development Service</h4>
+          </div>
+          <div class="service-desc">Full website development from concept to deployment with SEO basics and responsive design.</div>
+          <div class="service-bottom">
+            <div class="price">$120–$900</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 27 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqEmOgMdUINgrvzYqCHNyVftxgPvbiSYabWw&s" alt="App Dev" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Mobile App Development</h4>
+          </div>
+          <div class="service-desc">Native and cross-platform apps using Flutter, React Native, or native SDKs with backend support.</div>
+          <div class="service-bottom">
+            <div class="price">$250–$2000</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 28 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="UI/UX" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>UI/UX Designing</h4>
+          </div>
+          <div class="service-desc">User-centered design, wireframes, and prototypes to deliver delightful product experiences.</div>
+          <div class="service-bottom">
+            <div class="price">$70–$400</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 29 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=300&q=60" alt="Cloud Migration" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Cloud Migration Services</h4>
+          </div>
+          <div class="service-desc">Migrate servers & applications to AWS, Azure, or Google Cloud with minimal downtime and secure transfer.</div>
+          <div class="service-bottom">
+            <div class="price">$200–$1200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 30 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=60" alt="Data Recovery" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Data Recovery Services</h4>
+          </div>
+          <div class="service-desc">Emergency file recovery from drives, accidental deletions, and corrupted storage with secure handling.</div>
+          <div class="service-bottom">
+            <div class="price">$60–$400</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 31 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjiOWag2aH2sYBw1MzucvC6gc7oZI6-QC_4Q&s" alt="Cyber Audit" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Cybersecurity Audits</h4>
+          </div>
+          <div class="service-desc">Security assessment, penetration checks, and practical recommendations to harden systems and apps.</div>
+          <div class="service-bottom">
+            <div class="price">$180–$900</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 32 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Pen Testing" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Penetration Testing</h4>
+          </div>
+          <div class="service-desc">Hands-on penetration tests and threat simulation with clear remediation steps and executive reporting.</div>
+          <div class="service-bottom">
+            <div class="price">$200–$1200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 33 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://www.cloudavize.com/wp-content/uploads/2023/10/IT-Consulting.jpeg" alt="IT Consulting" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>IT Consulting</h4>
+          </div>
+          <div class="service-desc">Strategic IT planning, architecture reviews, and technology roadmaps for long-term growth and scalability.</div>
+          <div class="service-bottom">
+            <div class="price">$60–$500</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 34 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhpsAW3W7CAaQLrsO4VnG1C_yDMAUuExt6sQ2qx12EiWV4g01kuOnRca-8leTW4x7Ddl4&usqp=CAU" alt="Server Setup" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Server Setup & Management</h4>
+          </div>
+          <div class="service-desc">Secure server deployments, monitoring, and managed hosting to keep your systems online and healthy.</div>
+          <div class="service-bottom">
+            <div class="price">$80–$500</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 35 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=300&q=60" alt="Database" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Database Design</h4>
+          </div>
+          <div class="service-desc">Relational and NoSQL database design, normalization, and high-availability setups for performance.</div>
+          <div class="service-bottom">
+            <div class="price">$90–$420</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 36 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="API Dev" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>API Development</h4>
+          </div>
+          <div class="service-desc">RESTful and GraphQL APIs with documentation, authentication, and scalable deployment patterns.</div>
+          <div class="service-bottom">
+            <div class="price">$120–$600</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 37 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=60" alt="QA" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Software Testing / QA</h4>
+          </div>
+          <div class="service-desc">Manual and automated testing strategies, unit & integration tests, and CI pipeline setup.</div>
+          <div class="service-bottom">
+            <div class="price">$60–$400</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 38 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=300&q=60" alt="Bug Fixing" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Bug Fixing Service</h4>
+          </div>
+          <div class="service-desc">Quick debugging, patching, and fixes to production issues with clear reporting and root-cause analysis.</div>
+          <div class="service-bottom">
+            <div class="price">$25–$200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 39 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="DevOps" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>DevOps Setup</h4>
+          </div>
+          <div class="service-desc">CI/CD pipelines, containerization, and infrastructure-as-code to speed releases and ensure reliability.</div>
+          <div class="service-bottom">
+            <div class="price">$150–$900</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 40 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=300&q=60" alt="Video Edit" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Video Editing Service (Tech Channels)</h4>
+          </div>
+          <div class="service-desc">Professional editing for tech & tutorial channels, intros, subtitles, and motion graphics.</div>
+          <div class="service-bottom">
+            <div class="price">$20–$200</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 41 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Laptops" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Laptops & Hardware Procurement</h4>
+          </div>
+          <div class="service-desc">Assistance in choosing and procuring laptops, desktops, and peripherals tailored to your workload.</div>
+          <div class="service-bottom">
+            <div class="price">$300–$2400</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 42 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=300&q=60" alt="Monitors" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Monitors & Displays</h4>
+          </div>
+          <div class="service-desc">High-resolution monitors, color-calibrated displays, and multi-monitor setups for productivity.</div>
+          <div class="service-bottom">
+            <div class="price">$120–$900</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 43 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=300&q=60" alt="SSDs" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>SSDs / Hard Drives</h4>
+          </div>
+          <div class="service-desc">High-performance storage options, cloning, and secure data migration for fast systems.</div>
+          <div class="service-bottom">
+            <div class="price">$40–$320</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 44 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=300&q=60" alt="Keyboards" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Mechanical Keyboards</h4>
+          </div>
+          <div class="service-desc">Custom keyboard builds and procurement advice for developers and gamers for best ergonomics.</div>
+          <div class="service-bottom">
+            <div class="price">$40–$250</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 45 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=300&q=60" alt="Mouse" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Gaming / Productivity Mouse</h4>
+          </div>
+          <div class="service-desc">Top-grade mice for designers and gamers, including setup and calibration for high-precision work.</div>
+          <div class="service-bottom">
+            <div class="price">$15–$160</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 46 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Routers" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>WiFi Routers & Networking</h4>
+          </div>
+          <div class="service-desc">Network design, router setup, and secure WiFi implementation for homes and offices.</div>
+          <div class="service-bottom">
+            <div class="price">$35–$320</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 47 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Smartwatch" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Smart Watches & Wearables</h4>
+          </div>
+          <div class="service-desc">Advisory and procurement of wearables with health and productivity tracking for professionals.</div>
+          <div class="service-bottom">
+            <div class="price">$40–$400</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 48 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=60" alt="Headphones" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Earbuds / Headphones</h4>
+          </div>
+          <div class="service-desc">High-fidelity audio gear, setup assistance and tuning for content creators and listeners.</div>
+          <div class="service-bottom">
+            <div class="price">$20–$360</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 49 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Power Bank" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Power Banks & Charging Solutions</h4>
+          </div>
+          <div class="service-desc">Reliable power banks and fast charging advice for remote work and travel needs.</div>
+          <div class="service-bottom">
+            <div class="price">$15–$120</div>
+            <a class="order-btn" href="#contact">Order</a>
+          </div>
+        </div>
+
+        <!-- 50 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="img"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="Custom Requests" style="width:100%; height:100%; object-fit:cover;"></div>
+            <h4>Custom Tech Solutions (Tailored)</h4>
+          </div>
+          <div class="service-desc">Got a unique requirement? We build custom solutions to fit specific business needs with full support.</div>
+          <div class="service-bottom">
+            <div class="price">Custom Pricing</div>
+            <a class="order-btn" href="#contact">Discuss</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Support + Loyalty -->
+    <section class="support" style="margin-top:18px;">
+      <div class="card">
+        <h3>24×7 Customer Support</h3>
+        <p>At K Tech Solutions we understand the value of timely support. Our customer support team is available day and night to help you with queries, deployment assistance, troubleshooting, and urgent requests. Reach us by live chat, email, or ticket — and expect a prompt response. For mission-critical services we provide dedicated SLAs and priority handling.</p>
+      </div>
+
+      <div class="card">
+        <h3>Loyalty & Trust</h3>
+        <p>We value loyalty and integrity. K Tech Solutions follows a strict policy against scams, privacy violations, and unethical practices. Our platform prioritizes verified professionals, transparent pricing, and post-delivery support so buyers can rely on each transaction. We encourage long-term partnerships and reward returning customers with discounts and priority service.</p>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" style="margin-top:18px;">
+      <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+        <div style="flex:1; min-width:260px;">
+          <h2 style="margin:0;">Ready to start? Contact sales or request a quote</h2>
+          <p style="color:var(--muted); margin-top:6px;">Fill out the form or email <strong>support@ktechsolutions.example</strong> — our team will respond within 1 hour for urgent requests.</p>
+        </div>
+        <div style="min-width:320px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.03);">
+          <form onsubmit="event.preventDefault(); alert('Thank you — our team will contact you soon!');" style="display:flex; flex-direction:column; gap:8px;">
+            <input type="text" placeholder="Your name" required style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text);">
+            <input type="email" placeholder="Email" required style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text);">
+            <input type="text" placeholder="Service / Short description" required style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text);">
+            <button class="order-btn" style="padding:10px; border-radius:8px; background:var(--accent-gradient); color:#041824; border:none; font-weight:800;">Request Quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div style="max-width:900px; margin:auto; padding:18px 0;">
+        <div style="font-weight:700">K Tech Solutions</div>
+        <div style="color:var(--muted); margin-top:8px;">© <span id="year"></span> K Tech Solutions. Founded by Huzaifa Kath (Karachi, Sindh). All rights reserved. | Privacy • Terms • Support</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // small UI: add current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal animation for elements with class 'staggered'
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.staggered, .fade-up').forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+  </script>
+</body>
+</html>
